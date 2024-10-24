@@ -23,7 +23,7 @@ server.post('/videos', async (request, reply) => {
     return reply.status(201).send()
 })
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
 
