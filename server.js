@@ -2,8 +2,6 @@ import { fastify } from 'fastify'
 import { DatabaseMemory } from './database-memory.js'
 import { DatabasePostgres } from './database-postgres.js'
 
-const port = process.env.PORT || 4000;
-
 const server = fastify()
 
 //const database = new DatabaseMemory()
@@ -23,9 +21,6 @@ server.post('/videos', async (request, reply) => {
     return reply.status(201).send()
 })
 
-server.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
 
 server.get('/videos', async (request) => {
     const search = request.query.search
